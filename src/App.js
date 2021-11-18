@@ -26,20 +26,32 @@ function App() {
 
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
+  // The line below allows us to condition what renders based on which menu item the user selects from the navigation bar.
+  const [contactSelected, setContactSelected] = useState(false);
+
   // To pass Props to child elements, the declarations go INSIDE the opening tag of the component
   // It's almost like making a function call. When you make a call, you pass parameters. That's 
   // what happens when you declare Props inside an opening tag, such as what's inside the <Nav> opener.
   return (
     <div>
+      {/* Passing the getter and setter functions into the Nav component will allow the components
+      to modify their states in the App component, which will conditionally render based on the user's selection. */}
       <Nav
         categories={categories}
         setCurrentCategory={setCurrentCategory}
         currentCategory={currentCategory}
+        contactSelected={contactSelected}
+        setContactSelected={setContactSelected}
       ></Nav>
       <main>
-        <ContactForm></ContactForm>
-        <Gallery currentCategory={currentCategory}></Gallery>
-        <About></About>
+        {!contactSelected ? (
+          <>
+            <Gallery currentCategory={currentCategory}></Gallery>
+            <About></About>
+          </>
+        ) : (
+          <ContactForm></ContactForm>
+        )}
       </main>
     </div>
   );
