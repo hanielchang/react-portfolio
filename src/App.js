@@ -7,6 +7,8 @@ import Nav from './components/Nav';
 import About from './components/About';
 import Gallery from './components/Gallery';
 import ContactForm from './components/Contact';
+import Footer from './components/Footer';
+import Resume from './components/Resume';
 
 
 // To allow for Gallery to be a child of Nav, we "lift" the state by adding 3 things:
@@ -16,18 +18,16 @@ import ContactForm from './components/Contact';
 function App() {
   const [categories] = useState([
     {
-      name: 'commercial',
-      description: 'Photos of grocery stores, food trucks, and other commercial projects',
-    },
-    { name: 'portraits', description: 'Portraits of people in my life' },
-    { name: 'food', description: 'Delicious delicacies' },
-    { name: 'landscape', description: 'Fields, farmhouses, waterfalls, and the beauty of nature' },
+      name: 'projects',
+      description: 'Here is a list of my work. Click on the images to see the site!',
+    }
   ]);
 
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
   // The line below allows us to condition what renders based on which menu item the user selects from the navigation bar.
   const [contactSelected, setContactSelected] = useState(false);
+  const [aboutSelected, setAboutSelected] = useState(true);
 
   // To pass Props to child elements, the declarations go INSIDE the opening tag of the component
   // It's almost like making a function call. When you make a call, you pass parameters. That's 
@@ -42,15 +42,29 @@ function App() {
         currentCategory={currentCategory}
         contactSelected={contactSelected}
         setContactSelected={setContactSelected}
+        aboutSelected={aboutSelected}
+        setAboutSelected={setAboutSelected}
       ></Nav>
       <main>
-        {!contactSelected ? (
+        {aboutSelected ? (
           <>
-            <Gallery currentCategory={currentCategory}></Gallery>
             <About></About>
+            <Footer></Footer>
           </>
         ) : (
-          <ContactForm></ContactForm>
+          <>
+            {!contactSelected ? (
+              <>
+                <Gallery currentCategory={currentCategory}></Gallery>
+
+              </>
+            ) : (
+              <>
+                <ContactForm></ContactForm>
+                <Footer></Footer>
+              </>
+            )}
+          </>
         )}
       </main>
     </div>

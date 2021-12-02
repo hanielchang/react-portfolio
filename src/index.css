@@ -6,8 +6,9 @@ main {
 }
 :root {
   --primary: #8c54ff;
-  --secondary: #F3A847;
+  --secondary: #bb7d2c;
   --tertiary: #B12704;
+  --green: #335d3f;
   --light: #fafafa;
   --dark: #000000;
   --darker: #111111;
@@ -34,7 +35,7 @@ body {
   line-height: 1.5;
   font-size: 18px;
   letter-spacing: .1em;
-  background: var(--dark);
+  background: linear-gradient(#000000,#335d3f );
   color: var(--light);
   font-family: 'Poiret One', cursive;
 
@@ -175,6 +176,20 @@ textarea {
 .flex-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: left;
+}
+
+.footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: fixed;
+  left:0;
+  bottom:0;
+  right:0;
+  background-color: var(--secondary);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .space-between {
@@ -188,6 +203,7 @@ textarea {
 .mx-1 {
   margin-right: var(--spacing-one);
   margin-left: var(--spacing-one);
+  float: right;
 }
 
 .mx-2 {
@@ -240,6 +256,10 @@ textarea {
   height: 300px;
   margin-bottom: 50px;
   cursor: pointer;
+}
+
+.img-thumbnail:hover {
+  border: 5px solid #82828b;
 }
 
 .modalBackdrop {

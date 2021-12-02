@@ -21,6 +21,11 @@ function ContactForm() {
                 }
             }
         }
+        else {
+            if (!e.target.value) {
+                setErrorMessage('You cannot have blank fields.');
+            }
+        }
 
         if (!errorMessage) {
             setFormState({ ...formState, [e.target.name]: e.target.value });

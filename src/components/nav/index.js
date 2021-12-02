@@ -13,7 +13,9 @@ function Nav(props) {
         setCurrentCategory,
         currentCategory,
         contactSelected,
-        setContactSelected
+        setContactSelected,
+        aboutSelected,
+        setAboutSelected
     } = props;
 
     // Notice in the below code block that the first argument is the callback function, 
@@ -28,28 +30,31 @@ function Nav(props) {
     return (
         <header className="flex-row px-1">
             <h2>
-                <a data-testid="link" href="/">
-                    <span role="img" aria-label="camera"> 📸</span> Oh Snap!
-                </a>
+                <span role="img" aria-label="camera">Haniel Chang</span>
             </h2>
             <nav>
                 <ul className="flex-row">
-                    <li className="mx-2">
-                        <a data-testid="about" href="#about" onClick={() => setContactSelected(false)}>
-                            About me
-                        </a>
+                    <li className={`mx-2 ${aboutSelected && 'navActive'}`}>
+                        <span onClick={() => {
+                            setContactSelected(false);
+                            setAboutSelected(true);
+                        }}> About me</span>
                     </li>
                     <li className={`mx-2 ${contactSelected && 'navActive'}`}>
-                        <span onClick={() => setContactSelected(true)}>Contact</span>
+                        <span onClick={() => {
+                            setContactSelected(true);
+                            setAboutSelected(false);
+                        }}>Contact</span>
                     </li>
                     {categories.map((category) => (
                         <li
-                            className={`mx-1 ${currentCategory.name === category.name && !contactSelected && `navActive`}`}
+                            className={`mx-1 ${currentCategory.name === category.name && !contactSelected && !aboutSelected && `navActive`}`}
                             key={category.name}
                         >
                             <span onClick={() => {
                                 setCurrentCategory(category);
                                 setContactSelected(false);
+                                setAboutSelected(false);
                             }}
                             >
                                 {capitalizeFirstLetter(category.name)}
