@@ -23,7 +23,29 @@ const PhotoList = ({ category }) => {
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
             link: 'https://kylekilmartin371.github.io/group-project/',
             github: 'https://github.com/hanielchang/group-project'
+        },
+        {
+            name: 'Work Day Scheduler',
+            category: 'projects',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
+            link: 'https://hanielchang.github.io/work-day-scheduler/',
+            github: 'https://github.com/hanielchang/work-day-scheduler'
+        },
+        {
+            name: 'Basic Weather Search',
+            category: 'projects',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
+            link: 'https://hanielchang.github.io/weather-dashboard/',
+            github: 'https://github.com/hanielchang/weather-dashboard'
+        },
+        {
+            name: 'First Portfolio',
+            category: 'projects',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
+            link: 'https://hanielchang.github.io/personal-portfolio/',
+            github: 'https://github.com/hanielchang/personal-portfolio'
         }
+        
     ]);
 
     const currentPhotos = photos.filter((photo) => photo.category === category);
