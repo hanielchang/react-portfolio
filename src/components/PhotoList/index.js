@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const PhotoList = ({ category }) => {
 
-    const [photos] = useState([
+    const [projects] = useState([
         {
             name: 'Online PC store',
             category: 'projects',
@@ -48,14 +48,11 @@ const PhotoList = ({ category }) => {
         
     ]);
 
-    const currentPhotos = photos.filter((photo) => photo.category === category);
-
-
     return (
         <div>
             <div className="flex-row">
                 {/* The default property is where the image has been saved. To render the image, the default property must be invoked. */}
-                {currentPhotos.map((image, index) => (
+                {projects.map((image, index) => (
                     <div className="flex-row">
                         <a href={image.link}>
                             <img

@@ -8,7 +8,6 @@ import About from './components/About';
 import Gallery from './components/Gallery';
 import ContactForm from './components/Contact';
 import Footer from './components/Footer';
-import Resume from './components/Resume';
 
 
 // To allow for Gallery to be a child of Nav, we "lift" the state by adding 3 things:

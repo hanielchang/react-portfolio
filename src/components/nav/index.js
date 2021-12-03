@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { capitalizeFirstLetter } from "../../utils/helpers";
+import resume from '../../assets/resume.pdf';
 
 // so we start by initializing the category state as an array of a few objects. 
 // This could be just a regular array, rather than an array inside useState, but 
@@ -29,9 +30,9 @@ function Nav(props) {
 
     return (
         <header className="flex-row px-1">
-            <h2>
-                <span role="img" aria-label="camera">Haniel Chang</span>
-            </h2>
+            <h1>
+                <span role="img" className="nametag">Haniel Chang</span>
+            </h1>
             <nav>
                 <ul className="flex-row">
                     <li className={`mx-2 ${aboutSelected && 'navActive'}`}>
@@ -61,6 +62,14 @@ function Nav(props) {
                             </span>
                         </li>
                     ))}
+                    <li className={`mx-2`}>
+                        <a href={resume}>
+                            <span onClick={() => {
+                                setContactSelected(false);
+                                setAboutSelected(false);
+                            }}>Resume</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>

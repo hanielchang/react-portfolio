@@ -37,7 +37,7 @@ body {
   letter-spacing: .1em;
   background: linear-gradient(#000000,#335d3f );
   color: var(--light);
-  font-family: 'Poiret One', cursive;
+  font-family: 'papyrus', cursive;
 
 }
 
@@ -75,6 +75,21 @@ h5 {
 
 h6 {
   font-size: 1rem;
+}
+
+.nametag {
+  margin-left: 50px;
+  font-family: "Brush Script MT";
+}
+
+.github , .linkedin {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.profilepic {
+  height: 206px;
+  width: 220px;
 }
 
 p {
@@ -182,7 +197,8 @@ textarea {
 .footer {
   padding-top: 20px;
   padding-bottom: 20px;
-  position: fixed;
+  position: absolute;
+  bottom: 0px;
   left:0;
   bottom:0;
   right:0;
@@ -190,6 +206,7 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  
 }
 
 .space-between {

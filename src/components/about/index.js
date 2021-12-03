@@ -1,16 +1,12 @@
 import React from 'react';
+import profile from '../../assets/profile.jpg';
 
 function About() {
     return (
         <section className="my-5">
             <div>
                 <h1 id="about">About me</h1>
-                <img
-                    src='../../assets/profile.jpg'
-                    alt=''
-                    className="img-thumbnail mx-1"
-                    key=''
-                />
+                <img src={profile} alt='' className="profilepic"></img>
             </div>
 
             <p>
@@ -24,7 +20,7 @@ function About() {
             <p>
                 Apart from working and doing coding, I also like to play video games and dance.Halo is one of my favorite video games,
                 along with others such as Starcraft and Gears of War. Dancing to me is very important, because it always my brain to get out of working
-                mode and drift into a more creative side.Apart from expressing mental creativity, it also keeps me in great shape.Hip hop dance
+                mode and drift into a more creative side. Apart from expressing mental creativity, it also keeps me in great shape. Hip hop dance
                 is my most practiced type of dance.I also enjoy salsa dance.
             </p>
 
