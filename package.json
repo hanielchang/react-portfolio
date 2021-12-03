@@ -1,7 +1,7 @@
 {
   "name": "photo-port",
   "version": "0.1.0",
-  "homepage": "https://hanielchang.github.io/react-portfolio/",
+  "homepage": "https://hanielchang.github.io/react-portfolio",
   "private": true,
   "dependencies": {
     "@react-pdf/renderer": "^2.0.21",
